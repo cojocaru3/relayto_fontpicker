@@ -1,0 +1,144 @@
+/* app css stylesheet */
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li + li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+
+.container {
+  max-width: 1300px;
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+}
+
+.container .content {
+  width: 80%;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+.col-half {
+  width: 50%;
+  padding: 0 20px;
+}
+
+.container .sidebar {
+  width: 20%;
+  background: #f5f5f5;
+  padding: 15px;
+}
+
+.fonts-list {
+  display: flex;
+  margin: 0 -10px;
+  flex-wrap: wrap;
+}
+
+.font-item {
+  display: flex;
+  padding: 10px;
+  margin: 10px;
+  min-height: 120px;
+  min-width: 120px;
+  border: 1px solid rgba(200, 200, 200, .4);
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  transition: .3s ease;
+  cursor: pointer;
+}
+
+.font-item:hover,
+.font-item.selected {
+  border-color: #9693ff;
+}
+.font-item .font-name {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  padding: 5px;
+  text-align: center;
+  background: #f5f5f5;
+}
+
+.font-item .font-preview {
+  font-size: 18px;
+  max-width: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-100%);
+}
+
+.preview-label {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.preview-text--input {
+  display: block;
+  min-height: 70px;
+  width: 100%;
+  border: 1px solid rgba(200, 200, 200, .4);
+  border-radius: 8px;
+}
+
+.font-picker-area {
+  padding: 20px;
+  margin-top: 30px;
+}
+
+.filter-keyword {
+  border: 1px solid rgba(200, 200, 200, .4);
+  height: 40px;
+  padding: 0 15px;
+  color: #555;
+}
+
+.page-list {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-list .paging-item {
+  cursor: pointer;
+  padding: 10px 20px;
+  text-align: center;
+  background: #f5f5f5;
+  border: 1px solid rgba(200, 200, 200, .4);
+  border-radius: 5px;
+  width: 140px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
