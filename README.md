@@ -1,5 +1,9 @@
 # RELAYTO Font Picker
 
+### Demo URL
+
+[https://cojocaru3.github.io/relayto_fontpicker/#!/FontPicker](https://cojocaru3.github.io/relayto_fontpicker/#!/FontPicker)
+
 ### Install Dependencies
 
 We have preconfigured `npm` to automatically copy the downloaded AngularJS files to `app/lib` so we
