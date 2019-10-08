@@ -1,0 +1,71 @@
+
+<div class="container">
+    <div class="content">
+        <div class="row">
+            <div class="col-half">
+                <div class="form-group">
+                    <label class="preview-label">Text to preview</label>
+                    <textarea class="preview-text--input" ng-model="previewText"></textarea>
+                </div>
+            </div>
+            <div class="col-half">
+                <label class="preview-label">Preview with selected font:</label>
+                <div class="preview-area" ng-style="{fontFamily: selectedFont.family, fontSize: modifiers.fontSize}">
+                    {{previewText}}
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="font-picker-area">  
+                <div class="fp-head">
+                    <div class="fp-filters--search">
+                        <input type="text" ng-model="filters.keyword" class="filter-keyword" placeholder="Search by name" ng-change="filterByKeyword()">
+                    </div>
+        
+                    <div class="fonts-list" ng-if="fontsRequestCompleted">
+                        <div ng-repeat="font in filteredFonts" ng-class="{ 'font-item': true, 'selected': selectedFont.family === font.family }" ng-click="selectFont(font)">
+                            <div class="font-preview" ng-style="{fontFamily: font.family}">AbCdEfGhIjK</div>
+                            <div class="font-name">{{font.family}}</div>
+                        </div>
+                    </div>
+
+                    <div class="fonts-pagination"  ng-if="fontsRequestCompleted">
+                        <ul class="page-list">
+                            <li class="paging-item previous" ng-click="previousPage()">Previous</li>
+                            <li class="paging-item next" ng-click="nextPage()">Next</li>
+                        </ul>
+                    </div>
+        
+                    <div class="fonts-list fonts-list--loading" ng-if="!fontsRequestCompleted">
+                        Loading fonts list
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sidebar">
+        <div class="selected-font" ng-if="selectedFont !== null">
+            <span class="font-name" ng-style="{fontFamily: selectedFont.family}">{{selectedFont.family}}</span>
+        </div>
+
+        <div class="modifiers">
+            <div class="form-group">
+                <label class="preview-label">Font size</label>
+                <select class="form-control" ng-model="modifiers.fontSize">
+                    <option value="10px">10px</option>
+                    <option value="12px">12px</option>
+                    <option value="14px">14px</option>
+                    <option value="16px">16px</option>
+                    <option value="18px">18px</option>
+                    <option value="20px">20px</option>
+                    <option value="24px">24px</option>
+                    <option value="28px">28px</option>
+                    <option value="32px">32px</option>
+                    <option value="36px">36px</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
